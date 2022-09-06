@@ -1,0 +1,46 @@
+﻿@model FeedbackUtility.UtilityModel.UserInfoViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="RegisterUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile" class="control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" class="control-label"></label>
+                @Html.DropDownList("RoleID", new SelectList(@ViewBag.AllRoles, "RoleID", "RoleName"),new { @class="form-control" })
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        <br/>
+        <p style="color:red;font-style:italic;font-weight:400;">@ViewBag.msg</p>
+    </div>
+</div>

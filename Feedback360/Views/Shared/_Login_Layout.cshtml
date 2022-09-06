@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Style -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>@ViewData["Title"] - Feedback360</title>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="~/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+                </div>
+
+                @RenderBody()
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Feedback360 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
